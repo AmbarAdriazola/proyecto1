@@ -30,7 +30,7 @@ public function index(){
         'desc' => 'required'
       ]);
 
-      $producto = new Bodega();
+      $producto = new Producto();
       $producto->nombre = $request->nombre;
       $producto->codigo = $request->codigo;
       $producto->imagen = $request->imagen;

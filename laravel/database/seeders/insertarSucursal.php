@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class insertarProducto extends Seeder
+class insertarSucursal extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class insertarProducto extends Seeder
      */
     public function run()
     {
-        DB::table('producto')->insert(array());
+        DB::table('sucursal')->insert(array());
     }
 }

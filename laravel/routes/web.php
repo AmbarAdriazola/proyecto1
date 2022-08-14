@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\controllers\ProductoController@index');
 
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
+Route::get('/Eliminarsucursal/{id}', 'App\Http\Controllers\SucursalController@delete');
+Route::get('/sucursal/{id}', 'App\Http\Controllers\SucursalController@show');
+Route::post('/updatesucursal','App\Http\Controllers\SucursalController@update');
 
-
-//Route::get('/sucursal/{id}',);//aqui quedamos
