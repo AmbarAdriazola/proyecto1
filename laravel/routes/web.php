@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\App\Http\Controllers\ProductoController;
+use Illuminate\App\Http\controllers\SucursalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+  return view('welcome');
+});
 
 Route::get('/','App\Http\controllers\ProductoController@index');
 

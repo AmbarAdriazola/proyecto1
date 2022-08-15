@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\App\Http\Request;
+use Illuminate\App\Http\Response;
 
 class ProductoController extends Controller
 {
