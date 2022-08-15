@@ -5,11 +5,11 @@ use Illuminate\App\Http\Controllers\ProductoController;
 use Illuminate\App\Http\Controllers\SucursalController;
 
 
-//Route::get('/', function () {
-//  return view('welcome'); //se utiliza para mostrar el welcome de
-//});
+Route::get('/', function () {
+ return view('welcome'); //se utiliza para mostrar el welcome de
+});
 
-Route::get('/','App\Http\controllers\ProductoController@index');
+//Route::get('/','App\Http\controllers\ProductoController@index');
 
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
 Route::get('/Eliminarsucursal/{id}', 'App\Http\Controllers\SucursalController@delete');
