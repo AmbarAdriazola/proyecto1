@@ -6,8 +6,16 @@ use Illuminate\App\Http\Controllers\SucursalController;
 
 
 Route::get('/', function () {
- return view('welcome'); //se utiliza para mostrar el welcome de
+ return view('welcome'); 
 });
+
+Route::get('/prueba', function () {
+    return view('prueba'); 
+   });
+
+Route::get('/index', function () {
+    return view('index'); 
+   });   
 
 //Route::get('/','App\Http\controllers\ProductoController@index');
 
