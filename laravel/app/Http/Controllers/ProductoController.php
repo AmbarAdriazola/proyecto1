@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\App\Http\Request;
 use Illuminate\App\Http\Response;
+use App\models\Producto;
 
 class ProductoController extends Controller
 {
 public function index(){
-    $producto = Producto::get();
+    $productos = Producto::get();
     return view('producto.listado', [ //revisar  a que pertenece serie series
-      'producto' => $producto
+      'producto' => $productos
     ]);
   }
   public function create(){
