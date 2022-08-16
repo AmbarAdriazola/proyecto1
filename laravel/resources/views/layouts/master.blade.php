@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-      <title>PHP <3</title>
+      <title>Sistema de Inventario</title>
     </head>
     <body>
     @section('header')
@@ -15,16 +15,16 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/index">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/prueba">Prueba</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">Nuestros Productos</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="http://127.0.0.1:8000/agregar">Stock Productos</a></li>
-                                <li><a class="dropdown-item" href="#!">Nuevos Productos</a></li>
+                                <li><a class="dropdown-item" href="{{ route('producto.create') }}">Nuevos Productos</a></li>
+                                <li><a class="dropdown-item" href="#!">Stock Productos</a></li>
                             </ul>
                         </li>
                     </ul>
