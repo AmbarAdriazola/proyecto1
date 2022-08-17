@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Bodega;
+use App\Models\Bodega;
 
 class BodegaController extends Controller
 {
@@ -38,7 +38,25 @@ class BodegaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+            'producto_id' =>'required',
+            'sucursal_id' =>'required',
+            'cantidad' => 'required',
+            'precio' => 'required'
+          ]);
+    
+          $bodega = new Bodega();
+          $bodega->producto_id = $request->producto;
+          $bodega->sucursal_id = $request->sucursal;
+          $bodega->cantidad = $request->cantidad;
+          $bodega->precio = $request->precio;
+          $bodega->save();
+    
+    
+            return view('welcome',[
+              'bodega'=> $bodega
+            ]);
     }
 
     /**

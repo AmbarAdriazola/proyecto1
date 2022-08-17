@@ -10,7 +10,7 @@ class Producto extends Model
   protected $primaryKey = 'id';
   protected $table = 'producto';
 
-    public function sucursal (){
+    public function bodega (){
       return $this ->hasMany(Bodega::class);
     }
 

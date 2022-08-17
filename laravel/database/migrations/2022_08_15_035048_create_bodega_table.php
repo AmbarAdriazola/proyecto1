@@ -15,10 +15,10 @@ class CreateBodegaTable extends Migration
     {
         Schema::create('bodega', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categoria_id')->references('id')->on('categoria');
-            $table->integer('precio');
+            $table->foreignId('producto_id')->references('id')->on('producto');
             $table->foreignId('sucursal_id')->references('id')->on('sucursal');
             $table->integer('cantidad');
+            $table->integer('precio');
             $table->timestamps();
         });
     }
