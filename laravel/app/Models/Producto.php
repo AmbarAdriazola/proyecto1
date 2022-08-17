@@ -11,6 +11,10 @@ class Producto extends Model
   protected $table = 'producto';
 
     public function sucursal (){
-      return $this ->hasMany(sucursal::class);
+      return $this ->hasMany(Bodega::class);
     }
+
+    public function categoria(){
+      return $this->belongsTo(Categoria::class, 'categoria_id');
+  }
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Producto;
+use App\models\Bodega;
 
-class ProductoController extends Controller
+class BodegaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::get();
-        return view('producto.listado', [ 
-          'producto' => $productos
+        $bodega = Bodega::get();
+        return view('bodega.listado', [ 
+          'bodega' => $bodega
         ]);
     }
 
@@ -27,7 +27,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('agregarProducto');
+        return view('agregarBodega');
     }
 
     /**
@@ -37,27 +37,8 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {      
-      $this->validate($request,[
-        'nombre' =>'required',
-        'codigo' =>'required',
-        'imagen' => 'required',
-        'categoria' => 'required',
-        'descripcion' => 'required'
-      ]);
-
-      $producto = new Producto();
-      $producto->nombre = $request->nombre;
-      $producto->codigo = $request->codigo;
-      $producto->imagen = $request->imagen;
-      $producto->categoria_id = $request->categoria;
-      $producto->descripcion =$request->descripcion;
-      $producto->save();
-
-
-        return view('welcome',[
-          'producto'=> $producto
-        ]);
+    {
+        //
     }
 
     /**

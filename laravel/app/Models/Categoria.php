@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sucursal extends Model
+class Categoria extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-    protected $table = 'Sucursal';
+    protected $table = 'categoria';
 
-    public function bodega(){
-        return $this->hasMany(Bodega::class);
+    public function producto(){
+        return $this->hasMany(Producto::class);
     }
 }

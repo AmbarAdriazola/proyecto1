@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class insertarProducto extends Seeder
 {
@@ -13,7 +14,15 @@ class insertarProducto extends Seeder
      */
     public function run()
     {
-        DB::table('producto')->insert(array());
-        
+        DB::table('producto')->insert(array( 
+            [
+                'nombre' =>'kiwi' ,
+                'codigo'=>'25279', 
+                'imagen'=>'jasdlksjfskkfjsdlkfjsdklfjsdlkfjsdf' ,
+                'categoria_id'=>1, 
+                'descripcion'=>'una fruta citrica'
+            ]
+        ));
+
     }
 }
