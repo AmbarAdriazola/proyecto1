@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="/prueba">Prueba</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
@@ -30,7 +30,7 @@
                             <li><a class="dropdown-item" href="{{ route('producto.create') }}">Nuevos Productos</a></li>
                             <li><a class="dropdown-item" href="#!">Stock Productos</a></li>
                             <li><a class="dropdown-item" href="{{ route('bodega.create') }}">Insertar bodega</a></li>
-                            <li><a class="dropdown-item" href="#!">Vista Bodega</a></li>
+                            <li><a class="dropdown-item" hr ef="#!">Vista Bodega</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -38,10 +38,10 @@
                     <button class="btn btn-outline-dark" type="submit">
                         <a class="dropdown-item" href="http://127.0.0.1:8000/login">Iniciar Sesion</a>
                     </button>
-                </form>
+                    </form>
                 <form class="form-inline my-2 my-lg-1 col-10">
-                    <input name= "buscarpor"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">buscar</button>
+                    <input name= "buscarpor"  class="form-control mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">¡Buscar!</button>
                 </form>
             </div>
         </div>

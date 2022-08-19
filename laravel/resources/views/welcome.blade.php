@@ -2,10 +2,10 @@
 
 @section('content')
 
-        <section class="py-5">
+        <section class="py-5"></section>
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <img class="card-img-top" src="https://w7.pngwing.com/pngs/750/879/png-transparent-farmers-market-leaf-vegetable-greengrocer-vegetable-farmers-market-leaf-vegetable-greengrocer-thumbnail.png" alt="..." />
+                            <img class="card-img-top" src="https://e7.pngegg.com/pngimages/750/879/png-clipart-farmers-market-leaf-vegetable-greengrocer-vegetable-farmers-market-leaf-vegetable.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
