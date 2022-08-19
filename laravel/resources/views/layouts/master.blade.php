@@ -36,15 +36,12 @@
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        Carrito
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form>
-                <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
                         <a class="dropdown-item" href="http://127.0.0.1:8000/login">Iniciar Sesion</a>
                     </button>
+                </form>
+                <form class="form-inline my-2 my-lg-1 col-10">
+                    <input name= "buscarpor"  class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">buscar</button>
                 </form>
             </div>
         </div>

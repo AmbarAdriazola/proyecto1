@@ -12,6 +12,7 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    const PAGINACION=10;
     public function index()
     {
         $productos = Producto::get();
@@ -68,7 +69,7 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
