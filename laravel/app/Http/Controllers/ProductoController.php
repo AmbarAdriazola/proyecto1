@@ -4,20 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Categoria;
+use Illuminate\Support\Facades\DB;
+
 
 class ProductoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    const PAGINACION=10;
+  
     public function index()
     {
-        $productos = Producto::get();
-        return view('producto.listado', [ 
-          'producto' => $productos
+        $productos = Producto::all();
+        return view('tienda', [ 
+          'productos' => $productos
         ]);
     }
 
@@ -52,13 +56,11 @@ class ProductoController extends Controller
       $producto->codigo = $request->codigo;
       $producto->imagen = $request->imagen;
       $producto->categoria_id = $request->categoria;
-      $producto->descripcion =$request->descripcion;
+      $producto->descripcion = $request->descripcion;
       $producto->save();
 
 
-        return view('welcome',[
-          'producto'=> $producto
-        ]);
+      return redirect()->route('producto.index');
     }
 
     /**

@@ -23,7 +23,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/tienda">Nuestros Productos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('producto.index') }}">Nuestros Productos</a></li>
                             <li>
                                 <hr class="dropdown-divider"/>
                             </li>
@@ -39,10 +39,6 @@
                         <a class="dropdown-item" href="http://127.0.0.1:8000/login">Iniciar Sesion</a>
                     </button>
                     </form>
-                <form class="form-inline my-2 my-lg-1 col-10">
-                    <input name= "buscarpor"  class="form-control mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">¡Buscar!</button>
-                </form>
             </div>
         </div>
     </nav>
