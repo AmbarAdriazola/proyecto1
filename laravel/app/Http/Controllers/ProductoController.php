@@ -17,9 +17,18 @@ class ProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
   
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::all();
+        $buscarpor = $request->get('buscarpor');
+
+        
+        if($buscarpor != null || $buscarpor != '') {
+          $productos = Producto::where('nombre', 'like', '%'.$buscarpor.'%')->orwhere('codigo', 'like', '%'.$buscarpor.'%')->get();
+        } else {
+          $productos = Producto::all();
+          
+        }
+        
         return view('tienda', [ 
           'productos' => $productos
         ]);
@@ -107,4 +116,5 @@ class ProductoController extends Controller
     {
         //
     }
+
 }

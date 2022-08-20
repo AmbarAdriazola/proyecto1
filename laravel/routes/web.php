@@ -23,6 +23,7 @@ Route::get('/producto/index', [ProductoController::class, 'index'])->name('produ
 
 Route::get('/bodega/create', [BodegaController::class, 'create'])->name('bodega.create');
 Route::post('/bodega', [BodegaController::class, 'store'])->name('bodega.store');
+Route::get('/bodega/index', [ProductoController::class, 'index'])->name('bodega.index');
 
 
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
