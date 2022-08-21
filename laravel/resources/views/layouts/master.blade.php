@@ -33,7 +33,7 @@
                             <li><a class="dropdown-item" hr ef="#!">Vista Bodega</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul>   
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
                         <a class="dropdown-item" href="http://127.0.0.1:8000/login">Iniciar Sesion</a>
