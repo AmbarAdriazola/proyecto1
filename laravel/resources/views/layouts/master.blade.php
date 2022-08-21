@@ -28,9 +28,9 @@
                                 <hr class="dropdown-divider"/>
                             </li>
                             <li><a class="dropdown-item" href="{{ route('producto.create') }}">Nuevos Productos</a></li>
-                            <li><a class="dropdown-item" href="#!">Stock Productos</a></li>
+                            <!-- <li><a class="dropdown-item" href="#!">Stock Productos</a></li> -->
                             <li><a class="dropdown-item" href="{{ route('bodega.create') }}">Insertar bodega</a></li>
-                            <li><a class="dropdown-item" hr ef="#!">Vista Bodega</a></li>
+                            <!-- <li><a class="dropdown-item" hr ef="#!">Vista Bodega</a></li> -->
                         </ul>
                     </li>
                 </ul>   

@@ -15,7 +15,7 @@ class BodegaController extends Controller
     public function index()
     {
         $bodega = Bodega::get();
-        return view('bodega.listado', [ 
+        return view('bodega', [ 
           'bodega' => $bodega
         ]);
     }
@@ -54,7 +54,7 @@ class BodegaController extends Controller
           $bodega->save();
     
     
-            return view('welcome',[
+            return view('bodega',[
               'bodega'=> $bodega
             ]);
     }
