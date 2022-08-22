@@ -91,7 +91,11 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+      $productos = Producto::where('codigo', '=', $id)->get();
+    
+      return view('edit', [  //cambiar por la vista de editar
+        'productos' => $productos
+      ]);
     }
 
     /**
@@ -103,7 +107,24 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request,[
+        'nombre' =>'required',
+        'codigo' =>'required',
+        'imagen' => 'required',
+        'categoria' => 'required',
+        'descripcion' => 'required'
+      ]);
+
+      $productos = Producto::where('codigo', '=', $id)->get();
+
+      $producto = new Producto();
+      $producto->nombre = $request->nombre;
+      $producto->descripcion = $request->descripcion;
+      $producto->nombre = $request->nombre;
+      $producto->save();
+
+
+      return redirect()->route('producto.index');
     }
 
     /**

@@ -28,7 +28,7 @@
                             @endforeach 
                         </div>
                     </div><br>
-                        <a class="btn btn-danger" href="..." type="button">Eliminar</a>
+
 
 
 
