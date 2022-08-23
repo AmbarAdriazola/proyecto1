@@ -140,6 +140,15 @@ class ProductoController extends Controller
    */
   public function destroy($id)
   {
-    //
+    if(Producto::where('producto_id', '=', $id)->first() != null){
+      return redirect()->back()->withErrors(['mensaje' => 'El producto no puede ser eliminado.']);
   }
+  else{
+      $productos = Producto::findOrFail($id);
+      $productos->delete();
+      return redirect()->action([ProductoController::class, 'index']);
+  }
+  }
+
+
 }
