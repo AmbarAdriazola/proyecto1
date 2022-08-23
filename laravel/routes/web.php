@@ -12,6 +12,8 @@ Route::get('/index', function () {
     return view('index'); 
 });   
 
+//a
+
 Route::get('/producto/create', [ProductoController::class, 'create'])->name('producto.create');
 Route::post('/producto', [ProductoController::class, 'store'])->name('producto.store');
 Route::get('/producto/index', [ProductoController::class, 'index'])->name('producto.index');
@@ -26,8 +28,6 @@ Route::get('/bodega/index', [ProductoController::class, 'index'])->name('bodega.
 
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
 Route::resource('/bodega', 'App\Http\Controllers\BodegaController');
-
-
 
 
 
