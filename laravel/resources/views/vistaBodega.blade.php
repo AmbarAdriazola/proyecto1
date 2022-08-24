@@ -11,26 +11,22 @@
 <div class="container">
     <h1>Nuestros Productos </h1>
     <div class="row">
-        @foreach($productos as $producto)        
+        @foreach($bodega as $bodega)
+        
+        
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img src="{{ $producto->imagen }}" class="card-img-top" alt="...">
+                <img src="$bodega->producto()->first()->imagen" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $producto->nombre }}</h5>
-                    <p class="card-text">Codigo: {{ $producto->codigo }}.</p>
-                    <p class="card-text">Categoria: {{ $producto->categoria_id }}</p>
-                    <p class="card-text">Descripcion: {{ $producto->descripcion }}.</p>
-                    <a href="{{ route('producto.edit', $producto->codigo) }}" class="card-link">Editar</a>
-                    <a href="#" class="card-link">Eliminar</a>
+                    <h5 class="card-title">{{ $bodega->producto()->first()->nombre }}</h5>
+                    <p class="card-text">sucursal: {{ $bodega->sucursal()->first()->nombre }}.</p>
+                    <p class="card-text">precio: {{ $bodega->precio }}</p>
+                    <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 </div><br>
-
-
-
-
 
 @stop

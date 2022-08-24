@@ -16,9 +16,9 @@ class insertarBodega extends Seeder
     {
         DB::table('bodega')->insert(array( 
             [
-                'producto_id' => 1 ,
+                'producto_id' => 2 ,
                 'sucursal_id'=> 2, 
-                'cantidad'=> '4',
+                'cantidad'=> '1',
                 'precio'=> '61'
             ]
         ));

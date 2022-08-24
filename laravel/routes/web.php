@@ -21,7 +21,6 @@ Route::get('/producto/{id}/editar', [ProductoController::class, 'edit'])->name('
 Route::put('/producto/{id}', [ProductoController::class, 'update'])->name('producto.update');
 Route::delete('/producto/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');
 
-
 Route::get('/bodega/create', [BodegaController::class, 'create'])->name('bodega.create');
 Route::post('/bodega', [BodegaController::class, 'store'])->name('bodega.store');
 Route::get('/bodega/index', [ProductoController::class, 'index'])->name('bodega.index');
@@ -29,6 +28,8 @@ Route::get('/bodega/index', [ProductoController::class, 'index'])->name('bodega.
 
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
 Route::resource('/bodega', 'App\Http\Controllers\BodegaController');
+
+
 
 
 

@@ -89,12 +89,11 @@ class ProductoController extends Controller
    */
   public function edit($id)
   {
-    $productos = Producto::findOrFail($id);
-    return view('producto.update', ['producto' => $productos]);
-    /* $productos = Producto::where('codigo', '=', $id)->get();
-      return view('producto.update', [
-        'productos' => $productos
-      ]);*/
+    $productos = Producto::where('codigo', '=', $id)->first();
+    // dd($productos);
+      return view('actualizar', [
+        'producto' => $productos
+      ]);
   }
 
   /**
@@ -106,30 +105,21 @@ class ProductoController extends Controller
    */
   public function update(Request $request, $id)
   {
-    /* $this->validate($request, [
+    dd($id);
+    $this->validate($request, [
       'nombre' => 'required',
-      'codigo' => 'required',
-      'imagen' => 'required',
-      'categoria' => 'required',
       'descripcion' => 'required'
     ]);
 
-    $productos = Producto::where('codigo', '=', $id)->get();
+    $productos = Producto::where('codigo', '=', $id)->first();
 
     $producto = new Producto();
     $producto->nombre = $request->nombre;
     $producto->descripcion = $request->descripcion;
-    $producto->nombre = $request->nombre;
     $producto->save();
 
 
-    return redirect()->route('producto.index');*/
-    $productos = Producto::findOrFail($id);
-    $productos->nombre = $request->nombre;
-    $productos->precio = $request->precio;
-    $productos->descripcion = $request->descripcion;
-    $productos->save();
-    return redirect()->action([ProductoController::class, 'index']);
+    return redirect()->route('producto.index');
   }
 
   /**
@@ -140,15 +130,6 @@ class ProductoController extends Controller
    */
   public function destroy($id)
   {
-    if(Producto::where('producto_id', '=', $id)->first() != null){
-      return redirect()->back()->withErrors(['mensaje' => 'El producto no puede ser eliminado.']);
+    //
   }
-  else{
-      $productos = Producto::findOrFail($id);
-      $productos->delete();
-      return redirect()->action([ProductoController::class, 'index']);
-  }
-  }
-
-
 }
