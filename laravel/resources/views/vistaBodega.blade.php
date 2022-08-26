@@ -20,12 +20,11 @@
                     <p class="card-text">sucursal: {{ $bodega->sucursal()->first()->nombre }}.</p>
                     <p class="card-text">precio: {{ $bodega->precio }}</p>
                     <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
-                    <a href="{{ route('bodega.edit', $producto->codigo) }}" class="card-link">Editar</a>
+                    <a href="{{ route('bodega.edit', $bodega->id) }}" class="card-link">Editar</a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 </div><br>
-
 @stop

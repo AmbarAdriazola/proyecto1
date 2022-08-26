@@ -7,7 +7,6 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
 
-
 class ProductoController extends Controller
 {
 

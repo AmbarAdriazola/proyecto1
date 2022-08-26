@@ -16,10 +16,14 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $bodega = Bodega::get();
+        $bodega = Bodega::all();
+        $producto = Producto::all();
+        $sucursal = Sucursal::all();
         return view('vistaBodega', [ 
-          'bodega' => $bodega
-        ]);
+          'bodega' => $bodega, 
+          'producto' => $producto,
+          'sucursal' => $sucursal
+        ], compact('bodega', 'producto', 'sucursal'));
     }
 
     /**

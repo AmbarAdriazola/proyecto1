@@ -20,7 +20,7 @@
                     <p class="card-text">Codigo: {{ $producto->codigo }}.</p>
                     <p class="card-text">Categoria: {{ $producto->categoria_id }}</p>
                     <p class="card-text">Descripcion: {{ $producto->descripcion }}.</p>
-                    <a href="{{ route('producto.edit', $producto->codigo) }}" class="card-link">Editar</a>
+                    <a href="{{ route('producto.edit', $producto->id) }}" class="card-link">Editar</a>
                     <a href="#" class="card-link">Eliminar</a>
                 </div>
             </div>
@@ -28,9 +28,4 @@
         @endforeach
     </div>
 </div><br>
-
-
-
-
-
 @stop

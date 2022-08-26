@@ -2,7 +2,8 @@
 
 @section('content')
 
-<form action="{{route('bodega.edit')}}" method="POST">     
+<form action="{{ route('bodega.update', $bodega->id )}}" method="POST">     
+                @method('PUT')
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Ingresar Producto</label>
