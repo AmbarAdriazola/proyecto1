@@ -39,7 +39,6 @@
             </div>
         </div>
     </nav>
-
     <header class="bg-dark py-4">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
@@ -50,7 +49,6 @@
         </div>
     </header>
     @show
-
     <div class="container">
         <hr>
         @yield('content')
@@ -59,11 +57,14 @@
     @section('footer')
     <div class="container">
         <hr>
-
     </div>
     @show
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white"><b>Grupo 1 /</b> &copy; Ámbar Adriazola - Patricio Almonacid <b>/ Sección 51</b></p>
+        </div>
+    </footer>
 </body>
 
 </html>
