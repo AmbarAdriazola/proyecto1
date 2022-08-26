@@ -110,7 +110,6 @@ class ProductoController extends Controller
     $producto->descripcion = $request->descripcion;
     $producto->save();
 
-
     return redirect()->route('producto.index');
   }
 
