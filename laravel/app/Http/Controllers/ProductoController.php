@@ -89,9 +89,11 @@ class ProductoController extends Controller
   public function edit($id)
   {
     $producto = Producto::findOrFail($id);
+    $categoria = Categoria::all();
       return view('actualizar', [
-        'producto' => $producto
-      ],compact('producto')); 
+        'producto' => $producto,
+        'categoria' => $categoria
+      ],compact('producto', 'categoria')); 
       
   }
 
