@@ -12,8 +12,6 @@
     <h1>Nuestros Productos </h1>
     <div class="row">
         @foreach($bodega as $bodega)
-        
-        
         <div class="col-3">
             <div class="card" style="width: 18rem;">
                 <img src="$bodega->producto()->first()->imagen" class="card-img-top" alt="...">
