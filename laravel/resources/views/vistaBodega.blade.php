@@ -12,8 +12,6 @@
     <h1>Nuestros Productos </h1>
     <div class="row">
         @foreach($bodega as $bodega)
-        
-        
         <div class="col-3">
             <div class="card" style="width: 18rem;">
                 <img src="$bodega->producto()->first()->imagen" class="card-img-top" alt="...">
@@ -22,12 +20,11 @@
                     <p class="card-text">sucursal: {{ $bodega->sucursal()->first()->nombre }}.</p>
                     <p class="card-text">precio: {{ $bodega->precio }}</p>
                     <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
-                    <a href="{{ route('bodega.edit', $producto->codigo) }}" class="card-link">Editar</a>
+                    <a href="{{ route('bodega.edit', $bodega->id) }}" class="card-link">Editar</a>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
 </div><br>
-
 @stop

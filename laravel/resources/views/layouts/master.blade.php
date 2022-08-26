@@ -27,6 +27,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('producto.create') }}">Nuevos Productos</a></li>
                             <li><a class="dropdown-item" href="{{ route('bodega.create') }}">Insertar bodega</a></li>
+                            <li><a class="dropdown-item" href="{{ route('bodega.index') }}">Vista de bodega</a></li>
                         </ul>
                     </li>
                 </ul>
