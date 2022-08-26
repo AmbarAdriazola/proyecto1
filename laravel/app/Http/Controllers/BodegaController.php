@@ -78,11 +78,11 @@ class BodegaController extends Controller
      */
     public function edit($id)
     {
-        $productos = Producto::where('codigo', '=', $id)->first();
-        // dd($productos);
-          return view('actualizar', [
-            'producto' => $productos
-          ]);
+        $bodega = Bodega::where($id)->first();
+        
+        return view('actualizarBodega', [
+            'bodega' => $bodega
+        ]);
     }
 
     /**
@@ -94,23 +94,16 @@ class BodegaController extends Controller
      */
     public function update(Request $request, $id)
     {
-            
-    $this->validate($request, [
-        'nombre' => 'required',
-        'precio' => 'required',
-        'descripcion' => 'required'
-      ]);
+    
   
-      $productos = Producto::where('codigo', '=', $id)->first();
-  
-      $producto = new Producto();
-      $producto->nombre = $request->nombre;
-      $producto->precio = $request->precio;
-      $producto->descripcion = $request->descripcion;
-      $producto->save();
+      $bodega = Bodega::find($id);
+      $bodega->sucursal_id = $request->sucursal;
+      $bodega->cantidad = $request->cantidad;
+      $bodega->precio = $request->precio;
+      $bodega->save();
   
   
-      return redirect()->route('producto.index');
+      return redirect()->route('bodega.index');
     }
 
     /**

@@ -21,7 +21,11 @@
                     <p class="card-text">Categoria: {{ $producto->categoria_id }}</p>
                     <p class="card-text">Descripcion: {{ $producto->descripcion }}.</p>
                     <a href="{{ route('producto.edit', $producto->id) }}" class="card-link">Editar</a>
-                    <a href="#" class="card-link">Eliminar</a>
+                    <form action="{{ route('producto.destroy', $producto->id) }}" method ="POST" >
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" value="Eliminar" >Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>

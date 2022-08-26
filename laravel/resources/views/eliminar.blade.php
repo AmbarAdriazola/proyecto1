@@ -1,4 +1,4 @@
-@extends('layouts.master')
+<!-- @extends('layouts.master')
 
 @section('content')
 
@@ -14,3 +14,12 @@
 </form>
 
 @stop
+
+$buscarpor = $request->get('buscarpor');
+
+
+if ($buscarpor != null || $buscarpor != '') {
+  $productos = Producto::where('nombre', 'like', '%' . $buscarpor . '%')->orwhere('codigo', 'like', '%' . $buscarpor . '%')->get();
+} else {
+  $productos = Producto::all();
+} -->
