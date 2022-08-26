@@ -89,11 +89,11 @@ class ProductoController extends Controller
    */
   public function edit($id)
   {
-    $productos = Producto::where('codigo', '=', $id)->first();
-    // dd($productos);
+    $producto = Producto::findOrFail($id);
       return view('actualizar', [
-        'producto' => $productos
-      ]);
+        'producto' => $producto
+      ],compact('producto')); 
+      
   }
 
   /**
@@ -105,15 +105,8 @@ class ProductoController extends Controller
    */
   public function update(Request $request, $id)
   {
-    dd($id);
-    $this->validate($request, [
-      'nombre' => 'required',
-      'descripcion' => 'required'
-    ]);
 
-    $productos = Producto::where('codigo', '=', $id)->first();
-
-    $producto = new Producto();
+    $producto = Producto::find($id);
     $producto->nombre = $request->nombre;
     $producto->descripcion = $request->descripcion;
     $producto->save();
