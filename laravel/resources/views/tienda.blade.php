@@ -20,6 +20,8 @@
                     <p class="card-text">Codigo: {{ $producto->codigo }}.</p>
                     <p class="card-text">Categoria: {{ $producto->categoria_id }}</p>
                     <p class="card-text">Descripcion: {{ $producto->descripcion }}.</p>
+                    <p class="card-text-muted">creado: {{ $producto->created_at }}.</p>
+                    <p class="card-text-muted">actualizado: {{ $producto->updated_at }}.</p> 
                     <a href="{{ route('producto.edit', $producto->codigo) }}" class="card-link">Editar</a>
                     <form action="{{ route('producto.destroy', $producto->id) }}" method ="POST" >
                         @csrf

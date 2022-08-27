@@ -20,6 +20,8 @@
                     <p class="card-text">sucursal: {{ $bodega->sucursal()->first()->nombre }}.</p>
                     <p class="card-text">precio: {{ $bodega->precio }}</p>
                     <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
+                    <p class="card-text-muted">creado: {{ $bodega->created_at }}.</p>
+                    <p class="card-text-muted">actualizado: {{ $bodega->updated_at }}.</p>
                     <a href="{{ route('bodega.edit', $bodega->id) }}" class="card-link">Editar</a>
                     <form action="{{ route('bodega.destroy', $bodega->id) }}" method ="POST" >
                         @csrf
@@ -27,7 +29,7 @@
                         <button type="submit" value="Eliminar" >Eliminar</button>
                     </form>
                 </div>
-            </div>
+            </div> 
         </div>
         @endforeach
     </div>

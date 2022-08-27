@@ -60,7 +60,7 @@
                             <!-- Product image-->
                             <img class="card-img-top" src="https://images-ext-1.discordapp.net/external/VwTg48QLpa14X-1Wfbzc8rXAf6N62Vg7s2FYzA7ASOs/https/okdiario.com/img/recetas/2016/09/18/lechuga-boston.jpg?width=634&height=536" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="c   ard-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Nuestros Productos</h5>

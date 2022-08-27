@@ -44,7 +44,9 @@ Route::delete('/bodega/{id}/eliminar', [BodegaController::class, 'destroy'])->na
 Route::resource('/producto', 'App\Http\Controllers\ProductoController');
 Route::resource('/bodega', 'App\Http\Controllers\BodegaController');
 
+//Recuperar Imagen desde Storage
 
+Route::get('miniatura/{filename}', 'App\Http\Controllers\ProductoController@getImagen');
 
 
 

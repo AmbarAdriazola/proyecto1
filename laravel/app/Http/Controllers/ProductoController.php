@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\Producto;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -58,6 +60,13 @@ class ProductoController extends Controller
       'descripcion' => 'required'
     ]);
 
+    $imagen = $request->file('imagen');
+
+    if ($imagen){
+      $imagen_path = time() . "-" . $imagen->getClientOriginalName();
+      \Storage::disk('imagenes')->put($imagen_path, \file::get($imagen));
+    }
+
     $producto = new Producto();
     $producto->nombre = $request->nombre;
     $producto->codigo = $request->codigo;
@@ -88,13 +97,12 @@ class ProductoController extends Controller
    */
   public function edit($id)
   {
-    
-    $producto = Producto::where('codigo','=',$id)->first();
-      return view('actualizar', [
-        'producto' => $producto
-        
-      ]); 
-      
+
+    $producto = Producto::where('codigo', '=', $id)->first();
+    return view('actualizar', [
+      'producto' => $producto
+
+    ]);
   }
 
   /**
@@ -125,7 +133,13 @@ class ProductoController extends Controller
   {
     $producto = Producto::findOrFail($id);
     $producto->delete();
-    
+
     return redirect()->route('producto.index');
   }
+
+    // public function getImagen(filename)
+    // {
+    // $file = \Storage::disk('imagenes')->get($filename);
+    // return new Response($file, 200);
+    // }
 }
