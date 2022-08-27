@@ -9,6 +9,7 @@ use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
+
 class ProductoController extends Controller
 {
 
@@ -60,17 +61,17 @@ class ProductoController extends Controller
       'descripcion' => 'required'
     ]);
 
-    $imagen = $request->file('imagen');
+    $imagen = $request->file ('imagen');
 
     if ($imagen){
       $imagen_path = time() . "-" . $imagen->getClientOriginalName();
-      \Storage::disk('imagenes')->put($imagen_path, \file::get($imagen));
+      \Storage::disk('imagenes')->put($imagen_path, \File::get($imagen));
     }
 
     $producto = new Producto();
     $producto->nombre = $request->nombre;
     $producto->codigo = $request->codigo;
-    $producto->imagen = $request->imagen;
+    $producto->imagen = $imagen_path;
     $producto->categoria_id = $request->categoria;
     $producto->descripcion = $request->descripcion;
     $producto->save();
@@ -137,9 +138,9 @@ class ProductoController extends Controller
     return redirect()->route('producto.index');
   }
 
-    // public function getImagen(filename)
-    // {
-    // $file = \Storage::disk('imagenes')->get($filename);
-    // return new Response($file, 200);
-    // }
+  public function getImagen($filename)
+  {
+    $file = \Storage::disk('imagenes')->get($filename);
+    return new Response($file, 200);
+  }
 }

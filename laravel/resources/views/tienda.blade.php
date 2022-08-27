@@ -14,14 +14,20 @@
         @foreach($productos as $producto)        
         <div class="col-3">
             <div class="card" style="width: 18rem;">
-                <img src="{{ $producto->imagen }}" class="card-img-top" alt="...">
+                @if(Storage::disk('imagenes')->has($producto->imagen))
+                    <img src="miniatura/{{$producto->imagen}}" alt="{{ $producto->name}}">
+                @else
+                    <img src="{{ ($producto->imagen) }}" alt="{{ $producto->name}}">
+                @endif
+
+
                 <div class="card-body">
                     <h5 class="card-title">{{ $producto->nombre }}</h5>
                     <p class="card-text">Codigo: {{ $producto->codigo }}.</p>
                     <p class="card-text">Categoria: {{ $producto->categoria_id }}</p>
                     <p class="card-text">Descripcion: {{ $producto->descripcion }}.</p>
-                    <p class="card-text-muted">creado: {{ $producto->created_at }}.</p>
-                    <p class="card-text-muted">actualizado: {{ $producto->updated_at }}.</p> 
+                    <p class="card-text-muted">{{ \FormatTime::LongTimeFilterCreated($producto->created_at) }}.</p>
+                    <p class="card-text-muted">{{ \FormatTime::LongTimeFilter($producto->updated_at) }}.</p> 
                     <a href="{{ route('producto.edit', $producto->codigo) }}" class="card-link">Editar</a>
                     <form action="{{ route('producto.destroy', $producto->id) }}" method ="POST" >
                         @csrf
