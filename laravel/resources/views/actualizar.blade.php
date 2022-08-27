@@ -2,7 +2,7 @@
 
 @section('content')
 
-><div class="container">
+<div class="container">
     <h2>Editar Producto</h2>
     <form action="{{ route('producto.update', $producto->id) }}" method="POST">
         @method('PUT')

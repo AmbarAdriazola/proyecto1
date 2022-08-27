@@ -8,7 +8,7 @@
 
                 <div class="mb-3">
                     <label for="code" class="form-label">Ingresar Sucursal</label>
-                    <input type="number" class="form-control" id="sucursal" name="sucursal"  value="{{ $bodega->sucursal }}">
+                    <input type="number" class="form-control" id="sucursal" name="sucursal"  value="{{ $bodega->sucursal_id }}">
                 </div>    
                 <div class="mb-3">
                     <label for="image" class="form-label">Cantidad</label>

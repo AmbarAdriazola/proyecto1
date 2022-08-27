@@ -9,7 +9,7 @@
     </form>
 </div>
 <div class="container">
-    <h1>Nuestros Productos </h1>
+    <h1>Vista de Bodega </h1>
     <div class="row">
         @foreach($bodega as $bodega)
         <div class="col-3">
@@ -21,6 +21,11 @@
                     <p class="card-text">precio: {{ $bodega->precio }}</p>
                     <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
                     <a href="{{ route('bodega.edit', $bodega->id) }}" class="card-link">Editar</a>
+                    <form action="{{ route('bodega.destroy', $bodega->id) }}" method ="POST" >
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" value="Eliminar" >Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>

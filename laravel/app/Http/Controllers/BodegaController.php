@@ -78,11 +78,13 @@ class BodegaController extends Controller
      */
     public function edit($id)
     {
-        $bodega = Bodega::where($id)->first();
-        
+        $bodega = Bodega::where('id','=',$id)->first();
+        $producto = Producto::all();
         return view('actualizarBodega', [
-            'bodega' => $bodega
-        ]);
+        'bodega' => $bodega,
+        'producto'=> $producto
+          
+        ]); 
     }
 
     /**
@@ -114,6 +116,9 @@ class BodegaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bodega = Bodega::findOrFail($id);
+        $bodega->delete();
+        
+        return redirect()->route('bodega.index');
     }
 }
