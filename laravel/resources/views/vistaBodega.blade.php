@@ -15,15 +15,20 @@
         <div class="col-3">
             <div class="card" style="width: 18rem;">
 
-                <img src="$bodega->producto()->first()->imagen" class="card-img-top" alt="...">
+            @if(Storage::disk('imagenes')->has($bodega->producto()->first()->imagen))
+                    <img src="miniatura/{{$bodega->producto()->first()->imagen}}" alt="...">
+                @else
+                    <img src="{{ ($bodega->producto()->first()->imagen) }}" alt="...">
+                @endif
                 
+
                 <div class="card-body">
                     <h5 class="card-title">{{ $bodega->producto()->first()->nombre }}</h5>
                     <p class="card-text">sucursal: {{ $bodega->sucursal()->first()->nombre }}.</p>
                     <p class="card-text">precio: {{ $bodega->precio }}</p>
                     <p class="card-text">cantidad: {{ $bodega->cantidad }}.</p>
-                    <p class="card-text-muted">creado: {{ $bodega->created_at }}.</p>
-                    <p class="card-text-muted">actualizado: {{ $bodega->updated_at }}.</p>
+                    <p class="card-text-muted">{{ \FormatTime::LongTimeFilterCreated($bodega->created_at) }}.</p>
+                    <p class="card-text-muted">{{ \FormatTime::LongTimeFilter($bodega->updated_at) }}.</p> 
                     <a href="{{ route('bodega.edit', $bodega->id) }}" class="card-link">Editar</a>
                     <form action="{{ route('bodega.destroy', $bodega->id) }}" method ="POST" >
                         @csrf
